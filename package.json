@@ -1,12 +1,19 @@
 {
-  "name": "application-name",
+  "name": "expressjs-multiauth",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
     "start": "node app"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fabiobozzo/expressjs-multiauth.git"
+  },
   "dependencies": {
+    "ejs": "*",
     "express": "3.0.0rc3",
-    "ejs": "*"
+    "logfmt": "^1.1.2"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
