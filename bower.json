@@ -1,0 +1,9 @@
+{
+  "name": "express-multiauth",
+  "version": "0.0.1",
+  "dependencies": {
+    "modernizr": "",
+    "bootstrap": "",
+    "underscore" : ""
+  }
+}

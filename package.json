@@ -11,7 +11,8 @@
   "dependencies": {
     "ejs": "*",
     "express": "3.0.0rc3",
-    "logfmt": "^1.1.2"
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^0.11.4"
   },
   "engines": {
     "node": "0.10.x"
