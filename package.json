@@ -9,10 +9,23 @@
     "url": "git@github.com:fabiobozzo/expressjs-multiauth.git"
   },
   "dependencies": {
+    "bcrypt": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "*",
+    "dottie": "^0.2.4",
     "ejs": "*",
-    "express": "3.0.0rc3",
-    "grunt": "^0.4.5",
-    "grunt-contrib-less": "^0.11.4"
+    "express": "^4.8.1",
+    "express-session": "*",
+    "method-override": "*",
+    "mongoose": "^3.8.14",
+    "morgan": "*",
+    "node-uuid": "^1.4.1",
+    "passport": "*",
+    "passport-facebook": "*",
+    "passport-google-oauth": "*",
+    "passport-local": "*",
+    "passport-twitter": "*"
   },
   "engines": {
     "node": "0.10.x"

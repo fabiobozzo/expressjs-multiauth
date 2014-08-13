@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head><% include head %></head>
+
+    <body id="page-top" class="index">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#page-top">Welcome!</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="<%= projectUrl %>">Github</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#signin">Sign-up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Introduction -->
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img class="img-responsive" src="/images/logo.png" alt="" />
+                        <div class="intro-text">
+                            <span class="name">ExpressJS Multi-auth</span>
+                            <hr class="lock-light">
+                            <span class="skills">
+                                Web application skeleton for NodeJS + ExpressJS multi-method authentication.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <a href="#signin" class="btn btn-lg btn-outline">
+                            Try It!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- About -->
+        <section class="success" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2>About</h2>
+                        <hr class="lock-light">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-2">
+                        <p>If you are developing a NodeJS web application and you want to avoid writing boilerplate code
+                        for allowing access just to authenticated users, this project may be the right thing
+                        to start looking at</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p>However, these days standard authentication, based on a registration form, wouldn't be enough.
+                            Your users expect that your application allows them to sign-in with most popular 
+                            social network accounts.
+                        </p>
+                    </div>
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <a href="<%= projectUrl %>" class="btn btn-lg btn-outline">
+                            <i class="fa fa-download"></i> Download Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sign-in / Sign-Up -->
+        <section id="signin">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="signin-toggle-area showing">Sign-In</h2>
+                        <h2 class="signin-toggle-area">Sign-Up</h2>
+                        <hr class="lock-primary">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="col-xs-12 col-md-5 text-center">
+                            <div class="social">
+                                <a href="/auth/facebook" class="btn btn-primary">
+                                    <span class="fa fa-facebook"></span> 
+                                    Facebook
+                                </a>
+                            </div>
+                            <div class="social">
+                                <a href="/auth/twitter" class="btn btn-info">
+                                    <span class="fa fa-twitter"></span> 
+                                    Twitter
+                                </a>
+                            </div>
+                            <div class="social">
+                                <a href="/auth/google" class="btn btn-danger">
+                                    <span class="fa fa-google-plus"></span> Google
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-2 divider text-center">
+                            <span></span>OR<span></span>
+                        </div>
+                        <div class="col-xs-12 col-md-5">
+                            
+                            <!-- CLASSIC SIGNIN / SIGNUP -->
+
+                            <div class="signin-toggle-area showing">
+                              <form name="login" action="/login" method="post" role="form">
+                                <div class="form-group">
+                                    <label for="signinEmail">E-mail:</label>
+                                    <input type="email" name="email" class="form-control" placeholder="e-mail" required id="signinEmail" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="signinPassword">Password:</label>
+                                    <input type="password" name="password" class="form-control" placeholder="password" required id="signinPassword" />
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-lg pull-right">OK</button>
+                                </div>
+                                <div class="form-group">
+                                  If you don't have an account, please 
+                                  <a href="#" class="toggleSignin">
+                                    sign-up by clicking here.
+                                  </a>
+                                </div>
+                                <% if (message.length > 0) { %>
+                                  <div class="alert alert-danger"><%= message %></div>
+                                <% } %>
+                              </form>
+                            </div>
+
+                            <div class="signin-toggle-area">
+                              <form name="signup" action="/signup" method="post" role="form">
+                                <div class="form-group">
+                                    <label for="signupName">Name:</label>
+                                    <input type="text" name="name" class="form-control" placeholder="your full name" required id="signupName" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="signupEmail">E-mail:</label>
+                                    <input type="email" name="email" class="form-control" placeholder="e-mail" required id="signupEmail" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="signupPassword">Password:</label>
+                                    <input type="password" name="password" class="form-control" placeholder="password" required id="signupPassword" />
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-lg pull-right">OK</button>
+                                </div>
+                                <div class="form-group">
+                                  If you already have an account, please 
+                                  <a href="#" class="toggleSignin">
+                                    sign-in by clicking here.
+                                  </a>
+                                </div>
+                                <% if (message.length > 0) { %>
+                                  <div class="alert alert-danger"><%= message %></div>
+                                <% } %>
+                              </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center">
+            <div class="footer-below">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            Copyright &copy; Fabio Bozzo 2014
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="scroll-top page-scroll visible-xs visble-sm">
+            <a class="btn btn-primary" href="#page-top">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+        </div>
+
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/javascripts/index.js"></script>
+
+    </body>
+
+</html>
