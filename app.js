@@ -45,4 +45,4 @@ authRoutes(app, passport);
 appRoutes(app); 
 
 app.listen(port);
-console.log('Applicazione in attesa alla porta: ' + port);
+console.log('App listening on port: ' + port);

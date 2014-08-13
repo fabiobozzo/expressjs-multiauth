@@ -1,5 +1,4 @@
 var publicPaths = [
-    '/test',
 	'/login',
 	'/logout',
 	'/signup',
@@ -18,7 +17,7 @@ module.exports = function() {
             res.locals.user = req.user || {};
     		return next();	
     	} else { 
-            console.log("Tentativo di accesso non autorizzato a: "+req.path);
+            console.log("Access Denied to: "+req.path);
     		res.redirect('/#signin');
     	}
     }
